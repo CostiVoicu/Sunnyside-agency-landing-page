@@ -1,0 +1,489 @@
+@import './variables';
+
+html, body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+body{
+    font-size: $font-size;
+    font-family: $font-family-Barlow;
+    font-weight: $barlow-weight;
+    background-color: $neutral-color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navigation_header{
+    background-image: url('../images/mobile/image-header.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    @media (min-width: $desktop-size){
+        background-image: url('../images/desktop/image-header.jpg');
+        
+    }
+}
+
+.navigation{
+    position: relative;
+    padding: 1.4375rem;
+    @media (min-width: $desktop-size){
+        padding: 3.1rem 3rem;
+    }
+    .menu_logo{
+        float: right;
+        @media (min-width: $desktop-size){
+            display: none;
+        }
+    }
+    .menu{
+        position: absolute;
+        top: 5.75rem;
+        right: 1.5rem;
+        display: none;
+        @media (min-width: $desktop-size){
+            display: block;
+            top: 2rem;
+            right: 3rem;
+        }
+        .triangle{
+            position: absolute;
+            top: -1.9rem;
+            right: 0rem;
+            width: 0;
+            height: 0;
+            border-right: 1rem $neutral-color-white solid;
+            border-bottom: 1rem $neutral-color-white solid;
+            border-left: 1rem transparent solid;
+            border-top: 1rem transparent solid;
+            @media (min-width: $desktop-size){
+                display: none;
+            }
+        }
+        .menu_background{
+            width: 20.5625rem;
+            height: 19.0625rem;
+            background-color: $neutral-color-white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            @media (min-width: $desktop-size){
+                width: 28.5625rem;
+                height: 3.5rem;
+                flex-direction: row;
+                background-color: transparent;
+            }
+            .info{
+                color: $neutral-color-dark-grayish-blue;
+                @media (min-width: $desktop-size){
+                    color: $neutral-color-white;
+                }
+            }
+            .button{
+                background-color: $primary-color-yellow;
+                padding: 1.375rem 1.9375rem;
+                border-radius: 2.5rem;
+                color: $neutral-color-very-dark-desaturated-blue;
+                font-family: $font-family-Fraunces;
+                font-weight: $regular-fraunces-weight;
+                text-transform: uppercase;
+                font-size: $font-size - .2rem;
+                @media (min-width: $desktop-size){
+                    background-color: $neutral-color-white;
+                    padding: 1.375rem 2rem;
+                }
+            }
+            .button:hover{
+                background-color: hsl(200, 100%, 72%);
+                color: $neutral-color-white;
+            }
+        }
+        .menu_background > *{
+            @media (min-width: $desktop-size){
+                padding-right: 3.1875rem;
+            }
+        }
+    }
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 6rem - 1.4375rem;
+    margin-bottom: 6rem;
+    .title{
+        color: $neutral-color-white;
+        font-family: $font-family-Fraunces;
+        font-weight: $big-fraunces-weight;
+        max-width: 20rem;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .4375rem;
+    }
+}
+
+.article{
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 19.5rem 27.4375rem 19.5rem 27.4375rem 37.5rem 37.5rem 78.6875rem;
+    grid-template-rows: auto;
+    @media (min-width: $desktop-size){
+        grid-template-columns: repeat(2, 49.55vw);
+        grid-template-rows: repeat(3, 23%) 28%;
+    }
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        @media (min-width: $desktop-size){
+            align-items: flex-start;
+        }
+        .title{
+            color: $neutral-color-very-dark-desaturated-blue;
+            font-family: $font-family-Fraunces;
+            font-weight: $big-fraunces-weight;
+            max-width: 15rem;
+            text-align: center;
+            @media (min-width: $desktop-size){
+                text-align: left;
+                padding-left: 5rem;
+                padding-right: 5rem;
+                max-width: 20.6875rem - 2rem;
+            }
+        }
+        .text{
+            color: $neutral-color-dark-grayish-blue;
+            max-width: 20rem;
+            text-align: center;
+            line-height: 1.8rem;
+            @media (min-width: $desktop-size){
+                max-width: 28.125rem;
+                text-align: left;
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+        }
+        .learn_more{
+            color: $neutral-color-very-dark-desaturated-blue;
+            font-family: $font-family-Fraunces;
+            font-weight: $regular-fraunces-weight;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-decoration-thickness: .5rem;
+            @media (min-width: $desktop-size){
+                padding-left: 5rem;
+                padding-right: 5rem;
+            }
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    #card_egg{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 100%;
+        height: 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+    }
+    #card_text1{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 3.5rem;
+        @media (min-width: $desktop-size){
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+        .learn_more{
+            text-decoration-color: hsla(51, 100%, 49%, 0.459);
+        }
+        .learn_more:hover{
+            text-decoration-color: $primary-color-yellow;
+        }
+    }
+    #card_glass{
+        grid-column: 1/2;
+        grid-row: 3/4;
+        width: 100%;
+        height: 100%;
+        @media (min-width: $desktop-size){
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+    }
+    #card_text2{
+        grid-column: 1/2;
+        grid-row: 4/5;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 3.5rem;
+        @media (min-width: $desktop-size){
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+        .learn_more{
+            text-decoration-color: hsla(7, 99%, 70%, 0.459);
+        }
+        .learn_more:hover{
+            text-decoration-color: $primary-color-soft-red;
+        }
+    }
+    #green_card{
+        grid-column: 1/2;
+        grid-row: 5/6;
+        width: 100%;
+        height: 100%;
+        background-image: url(../images/mobile/image-graphic-design.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding-bottom: 3.5rem;
+        .title{
+            color: $neutral-color-very-dark-desaturated-blue;
+            font-family: $font-family-Fraunces;
+            font-weight: $big-fraunces-weight;
+            max-width: 15rem;
+            text-align: center;
+        }
+        .text{
+            color: $neutral-color-dark-grayish-blue;
+            max-width: 20rem;
+            text-align: center;
+            line-height: 1.8rem;
+        }
+        @media (min-width: $desktop-size){
+            padding-bottom: 0rem;
+            grid-column: 1/2;
+            grid-row: 3/4;
+            background-image: url(../images/desktop/image-graphic-design.jpg);
+        }
+        .title{
+            color: $primary-color-dark-desaturated-cyan;
+            padding-top: 20rem;
+            @media (min-width: $desktop-size){
+                align-self: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        .text{
+            color: $primary-color-dark-desaturated-cyan;
+            max-width: 20.625rem;
+            font-size: $font-size - .121rem;
+            @media (min-width: $desktop-size){
+                padding-bottom: 5rem;
+                align-self: center;
+            }
+        }
+    }
+    #blue_card{
+        grid-column: 1/2;
+        grid-row: 6/7;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 1.3rem;
+        .title{
+            color: $neutral-color-very-dark-desaturated-blue;
+            font-family: $font-family-Fraunces;
+            font-weight: $big-fraunces-weight;
+            max-width: 15rem;
+            text-align: center;
+        }
+        .text{
+            color: $neutral-color-dark-grayish-blue;
+            max-width: 20rem;
+            text-align: center;
+            line-height: 1.8rem;
+        }
+        background-image: url(../images/mobile/image-photography.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        @media (min-width: $desktop-size){
+            padding-bottom: 0rem;
+            grid-column: 2/3;
+            grid-row: 3/4;
+            background-image: url(../images/desktop/image-photography.jpg);
+        }
+        .title{
+            color: $primary-color-dark-blue;
+            padding-top: 20rem;
+            @media (min-width: $desktop-size){
+                align-self: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        .text{
+            color: $primary-color-dark-blue;
+            max-width: 21.625rem;
+            font-size: $font-size - .121rem;
+            @media (min-width: $desktop-size){
+                padding-bottom: 5rem;
+                align-self: center;
+            }
+        }
+    }
+    .big_card{
+        grid-column: 1/2;
+        grid-row: 7/8;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 8.75rem repeat(3, 21.5625rem);
+        @media (min-width: $desktop-size){
+            grid-column: 1/3;
+            grid-row: 4/5;
+            grid-template-columns: (23rem + 10rem) 22rem (23rem + 10rem);
+            grid-template-columns: repeat(3, 33.333333333%);
+            grid-template-rows: (5.3125rem + 10rem) (21.75rem);
+            justify-self: center;
+            align-self: center;
+        }
+        .title{
+            grid-column: 1/2;
+            grid-row: 1/2;
+            text-align: center;
+            justify-self: center;
+            align-self: center;
+            font-family: $font-family-Fraunces;
+            font-weight: $regular-fraunces-weight;
+            color: $neutral-color-grayish-blue;
+            text-transform: uppercase;
+            font-size: $font-size;
+            letter-spacing: .1rem;
+            padding-top: 4.5rem;
+            @media (min-width: $desktop-size){
+                grid-column: 1/4;
+                grid-row: 1/2;
+                align-self: flex-end;
+                padding-bottom: 2rem;
+            }
+        }
+        .card{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .image{
+                width: 4.625rem;
+                height: auto;
+                border-radius: 50%;
+            }
+            .text{
+                color: $neutral-color-very-dark-grayish-blue;
+                max-width: 19.875rem + 1rem;
+                padding: 0rem;
+                @media (min-width: $desktop-size){
+                    text-align: center;
+                    max-width: 22.0625rem;
+                }
+            }
+            .name{
+                color: $neutral-color-very-dark-desaturated-blue;
+                font-family: $font-family-Fraunces;
+                font-weight: $big-fraunces-weight;
+                margin-bottom: 0rem;
+            }
+            .job{
+                color: $neutral-color-grayish-blue;
+                font-size: $font-size - .3rem;
+            }
+        }
+        #director{
+            grid-column: 1/2;
+            grid-row: 2/3;
+            @media (min-width: $desktop-size){
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+        }
+        #chief{
+            grid-column: 1/2;
+            grid-row: 3/4;
+            @media (min-width: $desktop-size){
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+        }
+        #owner{
+            grid-column: 1/2;
+            grid-row: 4/5;
+            @media (min-width: $desktop-size){
+                grid-column: 3/4;
+                grid-row: 2/3;
+            }
+        }
+    }
+}
+
+.gallery{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 50vw);
+    grid-template-rows: repeat(2, 50%);
+    justify-content: center;
+    align-items: center;
+    @media (min-width: $desktop-size){
+        grid-template-rows: 100%;
+        grid-template-columns: repeat(4, 25%);
+    }
+    .image{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.footer{
+    width: 100%;
+    background-color: hsl(167, 44%, 70%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .logo{
+        filter: invert(40%) sepia(29%) saturate(719%) hue-rotate(116deg) brightness(65%) contrast(89%);
+        padding-top: 4rem;        
+    }
+    .info_card{
+        padding-top: 1.8125rem;
+        .info{
+            display: inline;
+            padding-left: 1.78125rem;
+            padding-right: 1.78125rem;
+            color: $primary-color-dark-desaturated-cyan;
+        }
+        .info:hover{
+            color: $neutral-color-white;
+        }
+    }
+    .icon_card{
+        display: flex;
+        flex-direction: row;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+        .icon{
+            padding-bottom: 2rem;
+            padding-right: 0.8125rem;
+            padding-left: 0.8125rem;
+        }
+        .icon:hover{
+            filter: brightness(0) invert(1);
+        }
+    }
+}
